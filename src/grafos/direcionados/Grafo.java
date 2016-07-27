@@ -1,7 +1,7 @@
 package grafos.direcionados;
 
 public class Grafo {
-    private static final String NEWLINE = System.getProperty("line.separator");
+    public static final String NEWLINE = System.getProperty("line.separator");
 
     private final int V;
     private int E;
@@ -43,7 +43,6 @@ public class Grafo {
 
     /**
      * Adds the undirected edge v-w to this graph.
-     *
      * @param  v one vertex in the edge
      * @param  w the other vertex in the edge
      * @throws IndexOutOfBoundsException unless both 0 <= v < V and 0 <= w < V
@@ -61,7 +60,6 @@ public class Grafo {
 
     /**
      * Returns the vertices adjacent to vertex <tt>v</tt>.
-     *
      * @param  v the vertex
      * @return the vertices adjacent to vertex <tt>v</tt>, as an iterable
      * @throws IndexOutOfBoundsException unless 0 <= v < V

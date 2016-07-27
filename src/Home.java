@@ -40,22 +40,18 @@ public class Home {
 		read.close();
 		
 		
-		//grafo com 4 vertices
-		
-		//definir a lista de adjacencia
-		
 		grafo = new Grafo(4);
 		grafo.addAdjacente(0, 1);
-		grafo.addAdjacente(0, 3);
 		grafo.addAdjacente(1, 2);
-		grafo.addAdjacente(2, 3);
+		grafo.addAdjacente(1, 3);
 		//inicializar a busca
 		DFS = new BuscaEmProfundidade(grafo, 0);
 		
 		System.out.println(grafo.toString());
 		
-		
-		
+		DFS.showTempoDeDescoberta();
+		System.out.println("\n\n");
+		DFS.showFinalizeTime();
 	}
 
 }
