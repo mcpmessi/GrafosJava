@@ -70,13 +70,12 @@ public class Grafo {
     }
 
     /**
-     *
      * @param  v
      * @return int
      */
     public int degree(int v) {
         validateVertex(v);
-        return adj[v].size();
+        return adj[v].length();
     }
 
 
@@ -90,7 +89,7 @@ public class Grafo {
             s.append(v + "->adj{");
             int ix = 0; //controlar a vírgura
             for (int w : adj[v]){
-                s.append(w + ((ix<adj[v].size()-1)?",":""));
+                s.append(w + ((ix<adj[v].length()-1)?",":""));
                 ix++;
             }
             s.append("}");

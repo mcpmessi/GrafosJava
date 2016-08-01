@@ -11,33 +11,33 @@ public class BuscaEmProfundidade {
     /**
      * Método construtor da classe
      * @param G Grafo
-     * @param s vertice inicial
+     * @param startVertex vertice raiz
      */
-    public BuscaEmProfundidade(Grafo G, int s) {
+    public BuscaEmProfundidade(Grafo G, int startVertex) {
         marked = new boolean[G.V()];
         d = new int[G.V()];
         f = new int[G.V()];
-        dfs(G, s);
+        dfs(G, startVertex);
     }
 
     /**
      * Método DFS recursivo
      * @param Grafo
-     * @param v - vertice raiz
+     * @param vertice - vertice de busca
      **/
-    private void dfs(Grafo G, int v) {
+    private void dfs(Grafo G, int vertice) {
         count++;
         time += 1;
-        System.out.println("time["+v+"]="+time);
-        marked[v] = true;
-        d[v] = time;
-        for (int w : G.adj(v)) {
+        System.out.println("time["+vertice+"]="+time);
+        marked[vertice] = true;
+        d[vertice] = time;
+        for (int w : G.adj(vertice)) {
             if (!marked[w]) {
             	System.err.println("Visitado::"+w);
                 dfs(G, w);
             }
         }
-        f[v] = time = time + 1;
+        f[vertice] = time = time + 1;
     }
     
     public void showTempoDeDescoberta(){
@@ -55,7 +55,7 @@ public class BuscaEmProfundidade {
      * @param v Vertice
      * @return <tt>true</tt> se existe, <tt>false</tt> caso contrário
      */
-    public boolean marked(int v) {
+    public boolean isMarcked(int v) {
         return marked[v];
     }
 

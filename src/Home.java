@@ -19,7 +19,6 @@ public class Home {
 		Scanner read = new Scanner(System.in);
 		System.out.println("Informe o numero de vertices:: ");
 		
-		/*
 		nVertice = read.nextInt();
 		
 		
@@ -35,16 +34,20 @@ public class Home {
 				System.out.println("Adjacente  a "+i+" ::");
 				grafo.addAdjacente(i, read.nextInt());
 			}
-		} */
+		} 
 		
 		read.close();
 		
-		
+		//a partir daqui
+		/*
 		grafo = new Grafo(4);
 		grafo.addAdjacente(0, 1);
 		grafo.addAdjacente(1, 2);
 		grafo.addAdjacente(1, 3);
 		//inicializar a busca
+		
+		*/
+		
 		DFS = new BuscaEmProfundidade(grafo, 0);
 		
 		System.out.println(grafo.toString());
@@ -52,6 +55,8 @@ public class Home {
 		DFS.showTempoDeDescoberta();
 		System.out.println("\n\n");
 		DFS.showFinalizeTime();
+		
+		
 	}
 
 }

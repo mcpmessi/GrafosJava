@@ -7,29 +7,22 @@ import java.util.NoSuchElementException;
  *  @param <Item> the generic type of an item in this bag
  */
 public class Bag<Item> implements Iterable<Item> {
-    private Node<Item> first;    // beginning of bag
-    private int n;               // number of elements in bag
+    private Node<Item> first;
+    private int n;
 
-    // helper linked list class
+    //Classe para a lista encadeada
     private static class Node<Item> {
         private Item item;
         private Node<Item> next;
-        //
     }
-
-    /**
-     * Initializes an empty bag.
-     */
+    
     public Bag() {
         first = null;
         n = 0;
     }
 
     /**
-     * Returns true if this bag is empty.
-     *
-     * @return <tt>true</tt> if this bag is empty;
-     *         <tt>false</tt> otherwise
+     * Verificar se o bag está vazio
      */
     public boolean isEmpty() {
         return first == null;
@@ -37,10 +30,9 @@ public class Bag<Item> implements Iterable<Item> {
 
     /**
      * Returns the number of items in this bag.
-     *
      * @return the number of items in this bag
      */
-    public int size() {
+    public int length() {
         return n;
     }
 
@@ -49,24 +41,19 @@ public class Bag<Item> implements Iterable<Item> {
      * @param  Item
      */
     public void add(Item item) {
-        Node<Item> old = first;
-        first = new Node<Item>();
+    	
+        Node<Item> old = first;		//guardar o nó anterior
+        first = new Node<Item>();   //criar um no novo
+        
         first.item = item;
         first.next = old;
         n++;
     }
 
-
-    /**
-     * Returns an iterator that iterates over the items in this bag in arbitrary order.
-     *
-     * @return an iterator that iterates over the items in this bag in arbitrary order
-     */
     public Iterator<Item> iterator()  {
         return new ListIterator<Item>(first);  
     }
 
-    // an iterator, doesn't implement remove() since it's optional
     @SuppressWarnings("hiding")
 	private class ListIterator<Item> implements Iterator<Item> {
         private Node<Item> current;
