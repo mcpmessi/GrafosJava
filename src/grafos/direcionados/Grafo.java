@@ -1,3 +1,7 @@
+/**
+ * Esta classe é baseada no exemplo do Slide
+ * */
+
 package grafos.direcionados;
 
 public class Grafo {
@@ -35,26 +39,30 @@ public class Grafo {
         return E;
     }
 
-    // throw an IndexOutOfBoundsException unless 0 <= v < V
-    private void validateVertex(int v) {
+    //Validar o vertice
+    private boolean validateVertex(int v) {
         if (v < 0 || v >= V)
-            throw new IndexOutOfBoundsException("vertex " + v + " is not between 0 and " + (V-1));
+            return false;
+        return true;
     }
 
     /**
-     * Adds the undirected edge v-w to this graph.
-     * @param  v one vertex in the edge
-     * @param  w the other vertex in the edge
-     * @throws IndexOutOfBoundsException unless both 0 <= v < V and 0 <= w < V
+     * Add edge
+     * @param  v
+     * @param  w
      */
-    public void addAdjacente(int v, int w) {
-        validateVertex(v);
-        validateVertex(w);
+    public String addAdjacente(int v, int w) {
+    	if(!validateVertex(v) || !validateVertex(w)){
+    		return  "Este vertice deve ser >= 0 e <"+V;
+    	}
+        
         //incrementar numero de Arestas
         E++;
         //adicionar arestas para o grafo nao direcionado. * (x,y),(y,x)
         adj[v].add(w);
         adj[w].add(v);
+        
+        return "OK";
     }
 
 
@@ -84,7 +92,7 @@ public class Grafo {
      */
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append(V + " Vertices, " + (E/2) + " Arestas " + NEWLINE);
+        s.append(V + " Vertices, " + E + " Arestas " + NEWLINE);
         for (int v = 0; v < V; v++) {
             s.append(v + "->adj{");
             int ix = 0; //controlar a vírgura

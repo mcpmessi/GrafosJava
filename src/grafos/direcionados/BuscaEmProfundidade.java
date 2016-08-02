@@ -28,12 +28,10 @@ public class BuscaEmProfundidade {
     private void dfs(Grafo G, int vertice) {
         count++;
         time += 1;
-        System.out.println("time["+vertice+"]="+time);
         marked[vertice] = true;
         d[vertice] = time;
         for (int w : G.adj(vertice)) {
             if (!marked[w]) {
-            	System.err.println("Visitado::"+w);
                 dfs(G, w);
             }
         }

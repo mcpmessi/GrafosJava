@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- *  @param <Item> the generic type of an item in this bag
+ *  @param <Item>
  */
 public class Bag<Item> implements Iterable<Item> {
     private Node<Item> first;
