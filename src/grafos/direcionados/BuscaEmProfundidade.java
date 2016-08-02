@@ -37,13 +37,20 @@ public class BuscaEmProfundidade {
         }
         f[vertice] = time = time + 1;
     }
-    
-    public void showTempoDeDescoberta(){
+    /**
+     * Exibe o tempo em que o vertice foi descoberto e marcado como CINZA
+     * @return void
+     * */
+    public void tempoDeDescoberta(){
     	for(int i=0; i<d.length; i++){
     		System.out.println("d["+i+"] :: "+d[i]);
     	}
     }
-    public void showFinalizeTime(){
+    /**
+     * Exibe o tempo em que o vertice foi marcado como PRETO
+     * @return void
+     * */
+    public void tempoDeFinalizacao(){
     	for(int i=0; i<f.length; i++){
     		System.out.println("f["+i+"] :: "+f[i]);
     	}

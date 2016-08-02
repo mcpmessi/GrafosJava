@@ -67,10 +67,9 @@ public class Grafo {
 
 
     /**
-     * Returns the vertices adjacent to vertex <tt>v</tt>.
-     * @param  v the vertex
-     * @return the vertices adjacent to vertex <tt>v</tt>, as an iterable
-     * @throws IndexOutOfBoundsException unless 0 <= v < V
+     * Retorna a lista de adjacência do vertice v
+     * @param  v vertice
+     * @return adj - Lista de adjacencia
      */
     public Iterable<Integer> adj(int v) {
         validateVertex(v);
@@ -90,11 +89,11 @@ public class Grafo {
     /**
      * Mostrar a estrutura do grafo
      */
-    public String toString() {
+    public String showGrafo() {
         StringBuilder s = new StringBuilder();
         s.append(V + " Vertices, " + E + " Arestas " + NEWLINE);
         for (int v = 0; v < V; v++) {
-            s.append(v + "->adj{");
+            s.append("adj["+v+"]{");
             int ix = 0; //controlar a vírgura
             for (int w : adj[v]){
                 s.append(w + ((ix<adj[v].length()-1)?",":""));

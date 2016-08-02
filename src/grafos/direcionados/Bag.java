@@ -16,21 +16,24 @@ public class Bag<Item> implements Iterable<Item> {
         private Node<Item> next;
     }
     
+    
     public Bag() {
         first = null;
         n = 0;
     }
 
     /**
-     * Verificar se o bag está vazio
+     * Verificar se o bag está vazio, se o primeiro item do nó é vazio, 
+     * enão não há referência para outros NÓS, logo o bag é vazio.
+     * @return boolean
      */
     public boolean isEmpty() {
         return first == null;
     }
 
     /**
-     * Returns the number of items in this bag.
-     * @return the number of items in this bag
+     * retorna o numero de items no Bag
+     * @return n
      */
     public int length() {
         return n;
