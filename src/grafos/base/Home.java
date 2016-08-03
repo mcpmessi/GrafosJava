@@ -24,8 +24,15 @@ public class Home {
 	}
 	
 	public Home(){
+		int a = 1;
+		int b = 1;
+		
+		int c = a = a + 1;
+		print(":: "+c);
+		
+		
 		read = new Scanner(System.in);
-		System.out.println("Informe o numero de vertices:: ");
+		print("Informe o numero de vertices:: ");
 		nVertice = read.nextInt();
 		
 		//criar o grafo nVertices (numero de vertices)

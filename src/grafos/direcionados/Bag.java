@@ -32,8 +32,8 @@ public class Bag<Item> implements Iterable<Item> {
     }
 
     /**
-     * retorna o numero de items no Bag
-     * @return n
+     * Retorna o numero de items no Bag
+     * @return n Numero de Items do Bag
      */
     public int length() {
         return n;
@@ -41,7 +41,7 @@ public class Bag<Item> implements Iterable<Item> {
 
     /**
      * Adicionar um Item ao Bag
-     * @param  Item
+     * @param  {Item}
      */
     public void add(Item item) {
     	
